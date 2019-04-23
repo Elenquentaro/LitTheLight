@@ -145,7 +145,6 @@ public class PlayerScript : MonoBehaviour
                     {
                         Animator animLantern = collider.gameObject.GetComponent<Animator>();
                         animLantern.SetBool("Lit", true);
-                        Save();
                     }
                     break;
                 case "Respawn":

@@ -21,6 +21,7 @@ public class lanternScript : MonoBehaviour
     {
         PlayerScript script = GameObject.Find("Player").GetComponent<PlayerScript>();
         script.GetCOIN();
+        script.Save();
     }
 
     void OnGUI()
