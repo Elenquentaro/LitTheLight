@@ -33,6 +33,8 @@ public class pauseScript : MonoBehaviour
                 Time.timeScale = 0;
                 panel.SetActive(true);
                 isPaused = true;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
             else
                 Resume();
@@ -45,6 +47,8 @@ public class pauseScript : MonoBehaviour
         Time.timeScale = 1;
         panel.SetActive(false);
         isPaused = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void Quit()

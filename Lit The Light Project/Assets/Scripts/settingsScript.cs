@@ -8,6 +8,8 @@ public class settingsScript : MonoBehaviour
 {
     public Text Gamemode;   //текст кнопки, отображающей текущий режим игры
     private string GamemodeValue;   //переменная, в которой будет храниться значение режима игры
+    public Text Jumpmode;   //текст кнопки, отображающей текущий режим прыжков
+    private string JumpmodeValue;   //переменная, связанная с режимом прыжков
 
     private Rect windowRect = new Rect((Screen.width - 200) / 2, (Screen.height - 60) / 2, 200, 70);
     private bool show = false;
@@ -16,6 +18,8 @@ public class settingsScript : MonoBehaviour
     {
         GameModeText();
         Gamemode.text = GamemodeValue;
+        JumpModeText();
+        Jumpmode.text = JumpmodeValue;
     }
 
     public void ChangeGameMode()
@@ -25,6 +29,7 @@ public class settingsScript : MonoBehaviour
         PlayerPrefs.SetString("Gamemode", GamemodeValue);
         Gamemode.text = GamemodeValue;
     }
+
 
     void GameModeText()
     {
@@ -39,6 +44,26 @@ public class settingsScript : MonoBehaviour
         }
     }
 
+    public void ChangeJumpMode()
+    {
+        JumpModeText();
+        JumpmodeValue = JumpmodeValue == "Guided" ? "Classic" : "Guided";
+        PlayerPrefs.SetString("Jumpmode", JumpmodeValue);
+        Jumpmode.text = JumpmodeValue;
+    }
+
+    void JumpModeText()
+    {
+        if (PlayerPrefs.HasKey("Jumpmode"))
+        {
+            JumpmodeValue = PlayerPrefs.GetString("Jumpmode") == "Guided" ? "Guided" : "Classic";
+        }
+        else
+        {
+            PlayerPrefs.SetString("Jumpmode", "Classic");
+            JumpmodeValue = "Classic";
+        }
+    }
 
     public void OnGUI()
     {

@@ -54,6 +54,9 @@ public class PlayerScript : MonoBehaviour
 
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         playerBody = GetComponent<Rigidbody2D>();
         playerAnim = GetComponent<Animator>();
 
@@ -94,14 +97,14 @@ public class PlayerScript : MonoBehaviour
 
         if (isActive)
         {
-            if (isGrounded)
+            if (isGrounded || PlayerPrefs.GetString("Jumpmode") == "Guided")
             {
                 //бег и покой с передачей данных в аниматор
                 float moveDirection = Input.GetAxis("Horizontal");
                 playerBody.velocity = new Vector2(moveDirection * runSpeed, playerBody.velocity.y);
                 if (moveDirection == 0)
                     animState = State.Idle;
-                else
+                else if (isGrounded)
                     animState = State.Run;
                 if ((moveDirection > 0 && !isFacingRight) || (moveDirection < 0 && isFacingRight))
                     Flip();

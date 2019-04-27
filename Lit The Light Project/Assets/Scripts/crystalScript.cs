@@ -12,12 +12,10 @@ public class crystalScript : MonoBehaviour
     {
         animCrystal = GetComponent<Animator>();
         int Level = PlayerPrefs.HasKey("Level") ? PlayerPrefs.GetInt("Level") : 0;
-        if (Level == SceneManager.GetActiveScene().buildIndex)
+        if (Level == SceneManager.GetActiveScene().buildIndex
+            && PlayerPrefs.GetInt("hasKey") == 1)
         {
-            if (PlayerPrefs.GetInt("hasKey") == 1)
-            {
-                Crushed();
-            }
+            Crushed();
         }
     }
 
