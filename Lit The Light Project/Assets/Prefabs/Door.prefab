@@ -58,6 +58,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -110,14 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e5793a958aee154c9a3f3f0a5148e6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteSecond: {fileID: 5452595456186918073, guid: 41e7e9f804f93634e8de6bacb904f0ed,
+  openedSprite: {fileID: 3440644402240420146, guid: 41e7e9f804f93634e8de6bacb904f0ed,
     type: 3}
-  spriteSecret: {fileID: 6047308688528540595, guid: 41e7e9f804f93634e8de6bacb904f0ed,
+  emptySprite: {fileID: 952306266690658888, guid: 41e7e9f804f93634e8de6bacb904f0ed,
     type: 3}
-  spriteOpened: {fileID: 3440644402240420146, guid: 41e7e9f804f93634e8de6bacb904f0ed,
-    type: 3}
-  spriteEmpty: {fileID: 952306266690658888, guid: 41e7e9f804f93634e8de6bacb904f0ed,
-    type: 3}
-  isOpened: 0
-  LastSceneNumber: 2
-  DoorText: {fileID: 0}
